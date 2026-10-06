@@ -1,0 +1,78 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Strata",
+        "description": "Strata runs on your PC. To reach it from Home Assistant, start it with `--host 0.0.0.0` (and an API key).",
+        "data": {
+          "host": "Host or IP address",
+          "port": "Port",
+          "api_key": "API key (if set)",
+          "ssl": "Use HTTPS"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Strata needs a new API key",
+        "data": { "api_key": "API key" }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot reach Strata. Check the address, the port, and that Strata is started with --host 0.0.0.0.",
+      "invalid_auth": "The API key is missing or wrong.",
+      "not_strata": "That server does not look like Strata.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This Strata server is already set up.",
+      "reauth_successful": "The API key was updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Strata options",
+        "data": {
+          "prompt": "Instructions",
+          "llm_hass_api": "Control Home Assistant",
+          "max_tokens": "Maximum answer length (tokens)",
+          "temperature": "Temperature",
+          "max_tool_iterations": "Maximum tool-call rounds",
+          "scan_interval": "Status refresh (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "loaded": { "name": "Model loaded" },
+      "busy": { "name": "Busy" }
+    },
+    "button": {
+      "load": { "name": "Load model" },
+      "unload": { "name": "Unload model" }
+    },
+    "sensor": {
+      "state": {
+        "name": "State",
+        "state": {
+          "unloaded": "Unloaded",
+          "idle": "Idle",
+          "reading": "Reading prompt",
+          "generating": "Writing answer"
+        }
+      },
+      "model": { "name": "Model" },
+      "tokens_per_second": { "name": "Answer speed" },
+      "prompt_tokens_per_second": { "name": "Prompt speed" },
+      "requests": { "name": "Requests" },
+      "queued": { "name": "Queued requests" },
+      "context": { "name": "Context size" },
+      "uptime": { "name": "Uptime" },
+      "gpu_utilization": { "name": "GPU utilization" },
+      "gpu_temperature": { "name": "GPU temperature" },
+      "gpu_power": { "name": "GPU power" },
+      "vram_used": { "name": "VRAM used" },
+      "ram_used": { "name": "RAM used" }
+    }
+  }
+}

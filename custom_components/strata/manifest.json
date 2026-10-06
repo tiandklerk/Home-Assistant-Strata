@@ -1,0 +1,13 @@
+{
+  "domain": "strata",
+  "name": "Strata",
+  "codeowners": ["@tiandklerk"],
+  "config_flow": true,
+  "dependencies": ["conversation"],
+  "documentation": "https://github.com/tiandklerk/Home-Assistant-Strata",
+  "integration_type": "service",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/tiandklerk/Home-Assistant-Strata/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
